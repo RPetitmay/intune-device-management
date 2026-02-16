@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/QxC6u2g.jpeg" alt="Traffic Examination"/>
 </p>
 
-<h1>Virtual Private Network Setup and Usage Within An Azure Virtual Machine</h1>
+<h1>Intune Device Management Lab (Windows)</h1>
 This tutorial outlines the enrollment of a Windows device into Intune, application of compliance and configuration of policies. The deployment of an application and verification reporting. <br />
 
 
