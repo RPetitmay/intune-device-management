@@ -26,61 +26,47 @@ This lab demonstrates enrolling a Windows device into Microsoft Intune and manag
 - Basic/General Understanding of Microsoft Intune
 
 <h2>Setup and Usage Proton VPN</h2>
-<p>
-<img src="https://i.imgur.com/1HCgbw6.jpeg" height="40%" width="40%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-<img src="https://i.imgur.com/58at38N.jpeg" height="40%" width="40%" alt="Disk Sanitization Steps"/>
-</p>
-<h3>Capturing IP Address Information on Personal Computer and Virtual Machine</h3>
-<ol>
-  <li>
-    Before logging into your virtual machine (VM), visit 
-    <a href="https://whatismyipaddress.com/" target="_blank">https://whatismyipaddress.com/</a>.  
-    Record the IP address details of your local computer, including the city, region, and country.
-  </li>
-  <li>
-    Sign in to your VM and navigate to the same website:  
-    <a href="https://whatismyipaddress.com/" target="_blank">https://whatismyipaddress.com/</a>.  
-    Again, record the IP address information for the VM, including the city, region, and country.
-  </li>
-</ol>
-<h3>Connecting to VPN Servers and Browsing Websites and IP Addresses</h3>
-<p>
-<img src="https://i.imgur.com/lydn3pS.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<ol>
-  <li>
-    On your local computer, sign up for the free version of ProtonVPN by visiting  
-    <a href="https://account.protonvpn.com/signup?plan=free&language=en" target="_blank">
-      https://account.protonvpn.com/signup?plan=free&language=en
-    </a>.
-  </li>
 
-  <li>
-    Within your virtual machine (VM), download and install the ProtonVPN client.
-  </li>
-<p>
-<img src="https://i.imgur.com/6BvXcPg.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-  <li>
-    Log in to ProtonVPN at  
-    <a href="https://account.protonvpn.com/login" target="_blank">https://account.protonvpn.com/login</a>  
-    and connect to a VPN server located in a different country (e.g., Japan).
-  </li>
-<p>
-<img src="https://i.imgur.com/BT7Qd4K.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-  <li>
-    After connecting, navigate to  
-    <a href="https://whatismyipaddress.com/" target="_blank">https://whatismyipaddress.com/</a>  
-    and record the displayed IP address details in a text file.
-  </li>
-<p>
-<img src="https://i.imgur.com/D8YT3UH.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-  <li>
-    Browse to any websites such as Google, Disney, Amazon or Netflix.  
-    Observe whether the displayed language, URL, or site content differs based on the location of your selected VPN server.
-  </li>
-</ol>
+## Goals
+- Create a Microsoft 365 developer tenant and Intune-enabled test environment
+- Enroll a Windows 10/11 device into Intune
+- Apply a compliance policy and configuration profile
+- Deploy an application and validate reporting
+
+## Environment
+- Tenant: Microsoft 365 Developer (E5)  
+- Platform: Windows 10/11  
+- Tools: Microsoft Intune, Microsoft Entra ID  
+- Device: Windows VM (or physical test device)
+
+## Architecture (High Level)
+User (test account) → Entra ID → Intune Enrollment → Device appears in Intune → Policies + Apps assigned → Compliance/Reporting validated
+
+## Steps (Summary)
+1. Created M365 dev tenant and test user
+2. Enabled Windows enrollment / MDM user scope
+3. Enrolled Windows device (Access work or school)
+4. Created and assigned compliance policy
+5. Created and assigned configuration profile
+6. Deployed an application
+7. Verified compliance, configuration, and installation status
+
+## Evidence / Screenshots
+- Device enrollment successful: `screenshots/02-device-enrolled.png`
+- Compliance policy status: `screenshots/03-compliance-policy.png`
+- Configuration profile applied: `screenshots/04-config-profile.png`
+- App deployment installed: `screenshots/05-app-install.png`
+
+## Troubleshooting Notes
+- Enrollment delays: device may take several minutes to appear in Intune
+- Policy assignment: ensure device/user is in the correct group
+
+## What I Learned
+- How Intune ties device management to Entra ID identity
+- How compliance policies and configuration profiles affect endpoint posture
+- How to validate deployments through Intune reporting
+
+## Next Improvements
+- Add Windows Autopilot simulation
+- Add Endpoint Security policies (Defender / BitLocker)
+- Add device cleanup and offboarding workflow
