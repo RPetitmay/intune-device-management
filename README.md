@@ -13,20 +13,16 @@ This tutorial outlines the enrollment of a Windows device into Intune, applicati
 - Microsoft 365 Developer Tenant (E5 Sandbox)
 - Microsoft 365 Admin Center
 - PowerShell
-- Windows 10 / Windows 11
-- Windows VM
 - Notepad/Notes App (Needed for saving usernames, passwords, and other information)
 
 <h2>Operating Systems Used </h2>
 
-- Windows 10 (21H2)
+- Windows 10 / Windows 11
+- Windows Virtual Machine
 
 <h2>List of Prerequisites</h2>
 
-- Basic/General Understanding of Microsoft Azure
-- Azure Subscription/Azure Account(Portal) created
-- Resource Group created within your Azure portal
-- Windows 10 Virtual Machine(Windows) created within your Azure portal with the resource group you've created previously
+- Basic/General Understanding of Microsoft Intune
 
 <h2>Setup and Usage Proton VPN</h2>
 <p>
