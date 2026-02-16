@@ -31,12 +31,6 @@ This lab demonstrates enrolling a Windows device into Microsoft Intune and manag
 - Apply a compliance policy and configuration profile
 - Deploy an application and validate reporting
 
-## Environment
-- Tenant: Microsoft 365 Developer (E5)  
-- Platform: Windows 10/11  
-- Tools: Microsoft Intune, Microsoft Entra ID  
-- Device: Windows VM (or physical test device)
-
 ## Architecture (High Level)
 User (test account) → Entra ID → Intune Enrollment → Device appears in Intune → Policies + Apps assigned → Compliance/Reporting validated
 
