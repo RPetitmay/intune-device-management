@@ -62,3 +62,5 @@ User (test account) → Entra ID → Intune Enrollment → Device appears in Int
 - Add Windows Autopilot simulation
 - Add Endpoint Security policies (Defender / BitLocker)
 - Add device cleanup and offboarding workflow
+
+<h2>Conclusion</h2>
