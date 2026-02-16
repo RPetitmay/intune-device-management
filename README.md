@@ -25,8 +25,6 @@ This lab demonstrates enrolling a Windows device into Microsoft Intune and manag
 
 - Basic/General Understanding of Microsoft Intune
 
-<h2>Setup and Usage Proton VPN</h2>
-
 ## Goals
 - Create a Microsoft 365 developer tenant and Intune-enabled test environment
 - Enroll a Windows 10/11 device into Intune
