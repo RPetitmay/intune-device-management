@@ -3,7 +3,8 @@
 </p>
 
 <h1>Intune Device Management Lab (Windows)</h1>
-This tutorial outlines the enrollment of a Windows device into Intune, application of compliance and configuration of policies. The deployment of an application and verification reporting. <br />
+This lab demonstrates enrolling a Windows device into Microsoft Intune and managing it using compliance policies, configuration profiles, and application deployment.
+ <br />
 
 
 <h2>Environments and Technologies Used</h2>
