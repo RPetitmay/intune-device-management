@@ -1,66 +1,39 @@
 <p align="center">
-<img src="https://i.imgur.com/QxC6u2g.jpeg" alt="Traffic Examination"/>
+<img src="https://i.imgur.com/REPLACE_WITH_YOUR_BANNER.png" alt="Conditional Access"/>
 </p>
 
-<h1>Intune Device Management Lab (Windows)</h1>
-This lab demonstrates enrolling a Windows device into Microsoft Intune and managing it using compliance policies, configuration profiles, and application deployment.
- <br />
-
+<h1>Entra ID — Conditional Access (SC-300 Lab 3)</h1>
+Build Conditional Access policies and trace their effect in the sign-in logs. The highest-weighted exam material. Maps to SC-300 Domain 2 part 2 (25–30%).<br />
 
 <h2>Environments and Technologies Used</h2>
 
-- Microsoft Intune
-- Microsoft Entra ID
-- Microsoft 365 Developer Tenant (E5 Sandbox)
-- Microsoft 365 Admin Center
-- PowerShell
-- Notepad/Notes App (Needed for saving usernames, passwords, and other information)
+- Microsoft Entra ID (P2 for risk-based policies)
+- Entra ID Protection
+- Microsoft Entra admin center
 
-<h2>Operating Systems Used </h2>
+<h2>Operating Systems Used</h2>
 
-- Windows 10 / Windows 11
-- Windows Virtual Machine
+- Windows 11 (browser-based)
 
 <h2>List of Prerequisites</h2>
 
-- Basic/General Understanding of Microsoft Intune
+- A developer tenant with a defined break-glass account
+- Conditional Access Administrator access
 
-## Goals
-- Create a Microsoft 365 developer tenant and Intune-enabled test environment
-- Enroll a Windows 10/11 device into Intune
-- Apply a compliance policy and configuration profile
-- Deploy an application and validate reporting
+<h2>Configuration Steps</h2>
+<ol>
+  <li><strong>Create a named location</strong> — Protection &rarr; Conditional Access &rarr; Named locations; add a trusted IP range.</li>
+  <li><strong>Create a require-MFA policy</strong> — target all users, <strong>exclude the break-glass account</strong>, grant control = MFA; set to <strong>Report-only</strong>.</li>
+  <li><strong>Create a sign-in-risk policy</strong> — high/medium sign-in risk requires MFA (Report-only).</li>
+  <li><strong>Trace the result</strong> — sign in as a test user; open Monitoring &rarr; Sign-in logs &rarr; Conditional Access tab; identify which policy and grant control applied.</li>
+</ol>
 
-## Architecture (High Level)
-User (test account) → Entra ID → Intune Enrollment → Device appears in Intune → Policies + Apps assigned → Compliance/Reporting validated
+<h2>Key Concepts Demonstrated</h2>
 
-## Steps (Summary)
-1. Created M365 dev tenant and test user
-2. Enabled Windows enrollment / MDM user scope
-3. Enrolled Windows device (Access work or school)
-4. Created and assigned compliance policy
-5. Created and assigned configuration profile
-6. Deployed an application
-7. Verified compliance, configuration, and installation status
+- Policy evaluation order, exclusions, and named locations determine the outcome.
+- Break-glass accounts are always excluded to prevent lockout.
 
-## Evidence / Screenshots
-- Device enrollment successful: `screenshots/02-device-enrolled.png`
-- Compliance policy status: `screenshots/03-compliance-policy.png`
-- Configuration profile applied: `screenshots/04-config-profile.png`
-- App deployment installed: `screenshots/05-app-install.png`
+<h2>Lessons Learned</h2>
 
-## Troubleshooting Notes
-- Enrollment delays: device may take several minutes to appear in Intune
-- Policy assignment: ensure device/user is in the correct group
-
-## What I Learned
-- How Intune ties device management to Entra ID identity
-- How compliance policies and configuration profiles affect endpoint posture
-- How to validate deployments through Intune reporting
-
-## Next Improvements
-- Add Windows Autopilot simulation
-- Add Endpoint Security policies (Defender / BitLocker)
-- Add device cleanup and offboarding workflow
-
-<h2>Conclusion</h2>
+- Deploy in Report-only first and read sign-in diagnostics before enforcing.
+- Reading a sign-in log to explain an outcome is the core exam skill here.
