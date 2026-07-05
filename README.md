@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://i.imgur.com/REPLACE_WITH_YOUR_BANNER.png" alt="Conditional Access"/>
+<img src="https://i.imgur.com/1iIxyNm.png" alt="Conditional Access"/>
 </p>
 
 <h1>Entra ID — Conditional Access (SC-300 Lab 3)</h1>
